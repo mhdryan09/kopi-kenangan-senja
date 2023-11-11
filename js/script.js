@@ -15,9 +15,17 @@ document.querySelector('#search-button').onclick = (e) => {
   e.preventDefault();
 }
 
+// Toggle class active untuk shopping cart
+const shoppingCart = document.querySelector('.shopping-cart');
+document.querySelector('#shopping-cart-button').onclick = (e) => {
+  shoppingCart.classList.toggle('active');
+  e.preventDefault();
+}
+
 // Klik di luar elemen
 const hamburgerMenu = document.querySelector('#hamburger-menu');
 const searchButton = document.querySelector('#search-button');
+const shoppingCartButton = document.querySelector('#shopping-cart-button');
 
 document.addEventListener('click', function (e) {
   // jika klik di luar hamburger menu dan diluar navbar
@@ -30,5 +38,11 @@ document.addEventListener('click', function (e) {
   if (!searchButton.contains(e.target) && !searchForm.contains(e.target)) {
     // hilangkan class active
     searchForm.classList.remove('active');
+  }
+
+  // jika klik di luar shopping cart atau search form
+  if (!shoppingCartButton.contains(e.target) && !shoppingCart.contains(e.target)) {
+    // hilangkan class active
+    shoppingCart.classList.remove('active');
   }
 });

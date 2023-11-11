@@ -119,6 +119,58 @@ body {
   color: var(--bg);
 }
 
+/* Shopping Cart */
+.shopping-cart {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  width: 35rem;
+  height: 100vh;
+  padding: 0 1.5rem;
+  color: var(--bg);
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+.shopping-cart.active {
+  right: 0;
+}
+
+.shopping-cart .cart-item {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #666;
+  position: relative;
+}
+
+.shopping-cart .cart-item img {
+  height: 10rem;
+  border-radius: 8px;
+}
+
+.shopping-cart .cart-item .cart-item-detail h3 {
+  font-size: 1.6rem;
+  padding-bottom: 0.5rem;
+}
+
+.shopping-cart .cart-item-price {
+  font-size: 1.2rem;
+}
+
+.shopping-cart .remove-item {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.shopping-cart .remove-item:hover {
+  color: var(--primary);
+}
+
+
 /* Hero Section */
 .hero {
   min-height: 100vh;
