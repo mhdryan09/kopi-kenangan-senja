@@ -33,7 +33,6 @@ document.addEventListener('click', function (e) {
     // hilangkan class active
     navbarNav.classList.remove('active');
   }
-  
   // jika klik di luar search bar atau search form
   if (!searchButton.contains(e.target) && !searchForm.contains(e.target)) {
     // hilangkan class active
@@ -46,3 +45,34 @@ document.addEventListener('click', function (e) {
     shoppingCart.classList.remove('active');
   }
 });
+
+
+// Modal Box
+const itemDetailModal = document.querySelector('#item-detail-modal');
+const itemDetailButtons = document.querySelectorAll('.item-detail-button');
+
+itemDetailButtons.forEach((btn) => {
+  // ketika item detail button di klik
+  btn.onclick = (e) => {
+    // ambil modal lalu ubah display jadi flex
+    itemDetailModal.style.display = 'flex';
+    e.preventDefault();
+  }
+})
+
+
+// klik tombol close modal
+document.querySelector('.modal .close-icon').onclick = (e) => {
+  // ambil modal lalu ubah display jadi none
+  itemDetailModal.style.display = 'none';
+  e.preventDefault();
+}
+
+// klik di luar modal
+window.onclick = (e) => {
+  // jika yang ditarget adalah modal
+  if (e.target === itemDetailModal) {
+    // hilangkan display
+    itemDetailModal.style.display = 'none';
+  }
+}
